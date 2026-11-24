@@ -9,7 +9,7 @@ router = APIRouter(prefix="/api/inventory", tags=["reservations"])
 
 class ReservationRequest(BaseModel):
     product_id: str
-    quantity: int = Field(gt=0, le=20)
+    quantity: int = Field(gt=0, le=10)  # at most 10 items per reservation
     order_ref: str = Field(min_length=1, max_length=40)
 
 
